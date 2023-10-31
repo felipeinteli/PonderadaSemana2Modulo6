@@ -55,3 +55,19 @@ CREATE TABLE TransporteProduto (
 );
 
 ![image](https://github.com/felipeinteli/PonderadaSemana2Modulo6/assets/110630427/b4288a7d-03e7-48f2-b690-209e5af68e37)
+
+
+# Consulta ao Banco de Dados
+
+SELECT
+    YEAR(DataHora) AS Ano,
+    MONTH(DataHora) AS Mes,
+    ID_Veiculo,
+    COUNT(ID_Paciente) / COUNT(DISTINCT ID_Veiculo) AS MediaPacientes
+FROM
+    TransportePaciente
+GROUP BY
+    YEAR(DataHora), MONTH(DataHora), ID_Veiculo;
+
+![image](https://github.com/felipeinteli/PonderadaSemana2Modulo6/assets/110630427/30f3d6d3-c4a9-4256-946d-5ecce224ff74)
+
